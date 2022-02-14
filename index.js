@@ -21,7 +21,7 @@ function userInput() {
     while (flag == true) {
         input = readlineSync.question("# 숫자를 입력해주세요 : ")
         input = input.split("").map((element) => parseInt(element))
-        if (input.length > 3 || input.length == 0 || [...new Set(input)].length < 3) {
+        if (input.length > 3 || input.length == 0 || [...new Set(input)].length < 3 || input.includes(0)) {
             console.log("다시 입력해 주세요")
             flag = true
             continue
