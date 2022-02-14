@@ -21,11 +21,7 @@ function userInput() {
     while (flag == true) {
         input = readlineSync.question("# 숫자를 입력해주세요 : ")
         input = input.split("").map((element) => parseInt(element))
-        if (
-            input.length > 3 ||
-            input.length == 0 ||
-            [...new Set(input)].length < 3
-        ) {
+        if (input.length > 3 || input.length == 0 || [...new Set(input)].length < 3) {
             console.log("다시 입력해 주세요")
             flag = true
             continue
@@ -40,8 +36,7 @@ function restart() {
 
     restartFlag = readlineSync.question(
         "게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요."
-    );
-
+    )
     if (restartFlag == 1) {
         startGame()
     } else if (restartFlag == 2) {
@@ -63,13 +58,9 @@ function compareValue(computerNumber, input) {
     if (strike == 3) {
         console.log("3개의 숫자를 모두 맞히셨습니다! 게임 종료")
         console.log()
-        console.log(
-            "===================================================================================="
-        )
-        console.log(
-            "===================================================================================="
-        )
-        restart();
+        console.log("====================================================================================")
+        console.log("====================================================================================")
+        restart()
     } else if (strike != 0 && ball != 0) {
         console.log(`${strike} 스트라이크 ${ball} 볼`)
     } else if (strike == 0 && ball != 0) {
